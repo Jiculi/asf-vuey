@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="es">  
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+    </head>
+
+    <body>
+
+        <div id="app">
+            <div v-for="game in games">
+                <h1>{{ game.name }} - <small>{{ game.console }}</small></h1>
+            
+                <span v-for="star in game.rating" @click="increaseRating(game)">❤️</span>
+            
+                <div v-if="game.rating > 5">Wow, this game must be <b>REALLY</b> good</div>
+              </div>            
+            
+        </div>
+        
+          
+        <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+        <script type="module" src="a2.js"></script>
+    </body>
+</html>       

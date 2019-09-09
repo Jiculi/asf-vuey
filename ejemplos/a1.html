@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="es">  
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+    </head>
+
+    <body>
+        <div id="app-componente">
+            <blog-post title="My journey with Vue"></blog-post>
+            <boton-cuenta></boton-cuenta>
+            <boton-cuenta></boton-cuenta>
+            <boton-cuenta></boton-cuenta>
+            <boton-cuenta></boton-cuenta>
+            <boton-cuenta></boton-cuenta>
+          </div>
+
+        <div id="lee">
+          <p>{{ entidad }}</p>
+          <input v-model="entidad">
+        </div>
+
+        <div id="app-5">
+          <p>{{ message }}</p>
+          <button v-on:click="reverseMessage">busca</button>
+        </div>
+
+        <table>
+            <thead>
+                <tr>
+                    <th> </th>
+                    <th>Asuntos</th>
+                    <th>Presuntos</th>
+                    <th>suma</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                  <td>Entidad</td>
+                  <td id="a1">{{d1}}</td>
+                  <td id="a2">{{d2}}</td>
+                  <td id="a3">{{d3}}</td>
+                </tr>
+                <tr>
+                  <td>Dependencia</td>
+                  <td id="a4">{{d4}}</td>
+                  <td id="a5">{{d5}}</td>
+                  <td id="a6">{{d6}}</td>
+            </tr>
+            </tbody>
+        </table>
+
+
+
+        <div id="moneda">
+                <h3>Bitcoin Price Index</h3>
+                <div
+                  v-for="currency in info"
+                  class="currency"
+                >
+                  {{ currency.description }}:
+                  <span class="lighten">
+                    <span v-html="currency.symbol"></span>{{ currency.rate_float | currencydecimal }}
+                  </span>
+                </div>
+        </div>
+
+
+        <div id="app-7">
+          <ol>
+            <todo-item
+              v-for="item in comida"
+              v-bind:todo="item"
+              v-bind:key="item.id"
+            ></todo-item>
+          </ol>
+        </div>
+        
+        <div id="app-2">
+            <span v-bind:title="message">
+                Hover your mouse over me for a few seconds
+                to see my dynamically bound title!
+            </span>
+        </div>
+
+        <div id="app-3">
+                <span v-if="seen">Now you see me</span>
+        </div>
+
+        <div id="app-4">
+                <ol>
+                  <li v-for="todo in todos">
+                    {{ todo.text }}
+                  </li>
+                </ol>
+        </div>
+
+
+        <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+        <script type="module" src="a1.js"></script>
+    </body>
+</html>
